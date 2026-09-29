@@ -2,6 +2,8 @@
 
 记录女朋友的生理期，推算下一次什么时候来。Flutter 编写，界面为中文，数据只保存在手机本地。
 
+安卓安装包在 [Releases](https://github.com/calmliming/luna-care/releases) 页面，一般手机下载 `app-arm64-v8a-release.apk`。
+
 ## 功能
 
 - **今天**：月相周期图（每颗珠子代表周期中的一天，月亮随周期盈亏：经期是新月，排卵前后接近满月）；显示“还有几天来月经”、经期第几天或已推迟几天，以及当前阶段的照顾建议。一键记录“她今天来月经了”“月经今天结束了”，都可以撤销。
@@ -47,10 +49,19 @@ flutter test
 在安卓手机上运行或打包 APK 需要 JDK 17 以上和 Android SDK（装 Android Studio 会一并装好，也可以只装命令行工具）。第一次先运行 `flutter doctor --android-licenses` 接受许可，然后：
 
 ```bash
-flutter build apk   # 生成 build/app/outputs/flutter-apk/app-release.apk，传到手机上安装
+flutter build apk --split-per-abi   # 在 build/app/outputs/flutter-apk/ 下按 CPU 架构各生成一个安装包
 ```
 
-release 包目前用本机的调试密钥签名（见 [android/app/build.gradle.kts](android/app/build.gradle.kts)），只适合自己安装。换一台电脑打出的包签名不同，不能覆盖安装，得先卸载；卸载会删掉记录，所以先在设置里复制备份。
+release 包用正式密钥签名，密钥库的位置和密码写在 `android/key.properties` 里（不进 git）：
+
+```properties
+storeFile=D:/SDK/keys/luna-care-release.jks
+storePassword=…
+keyAlias=luna-care
+keyPassword=…
+```
+
+没有这个文件时会改用调试密钥，照样能打包，但签名不同的包不能互相覆盖安装，只能先卸载，而卸载会删掉记录。所以给手机装的包要一直用同一个密钥，换包前先在设置里复制备份。密钥库和密码丢了就再也发不了能覆盖安装的更新，务必另外备份一份。
 
 ## 应用图标
 
