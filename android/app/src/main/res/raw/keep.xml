@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Dart looks the notification icon up by name, which the release build's
+     resource shrinker can't see. Without this it would be stripped, and
+     reminders would fail without a trace. -->
+<resources xmlns:tools="http://schemas.android.com/tools"
+    tools:keep="@drawable/ic_stat_luna" />

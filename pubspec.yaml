@@ -1,0 +1,37 @@
+name: luna_care
+description: "LunaCare: record her periods and predict the next one."
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.13.4
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+  shared_preferences: ^2.5.5
+  flutter_local_notifications: ^22.3.1
+  timezone: ^0.11.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+  flutter_launcher_icons: ^0.14.4
+
+flutter:
+  uses-material-design: true
+
+  # Cormorant Garamond (SIL Open Font License, see assets/fonts/OFL.txt),
+  # cut down to static weights and ASCII; used only for day counts.
+  fonts:
+    - family: Cormorant
+      fonts:
+        - asset: assets/fonts/CormorantGaramond-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/CormorantGaramond-SemiBold.ttf
+          weight: 600

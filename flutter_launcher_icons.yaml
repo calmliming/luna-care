@@ -1,0 +1,19 @@
+# App icons for every platform. The source images are drawn by
+# tool/make_icon.py; after changing them, regenerate with:
+#   dart run flutter_launcher_icons
+flutter_launcher_icons:
+  image_path: "assets/icon/icon.png"
+  android: true
+  ios: true
+  remove_alpha_ios: true
+  background_color_ios: "#1E2436"
+  adaptive_icon_background: "#1E2436"
+  adaptive_icon_foreground: "assets/icon/icon_foreground.png"
+  # The foreground image already keeps to the safe zone; no extra padding.
+  adaptive_icon_foreground_inset: 0
+  adaptive_icon_monochrome: "assets/icon/icon_monochrome.png"
+  web:
+    generate: true
+    image_path: "assets/icon/icon.png"
+    background_color: "#F1F6F8"
+    theme_color: "#A8323E"

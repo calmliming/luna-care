@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Status bar icon for reminders: the launcher icon's orbit, crescent and
+     bead (tool/make_icon.py), fitted to 24dp. Android draws only the alpha,
+     tinted, so everything is white. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <!-- The orbit, with a gap around the bead. -->
+    <path
+        android:pathData="M20.4,7.377 A9.588,9.588 0 1,1 17.476,4.129"
+        android:strokeWidth="1"
+        android:strokeColor="#FFFFFFFF"
+        android:strokeAlpha="0.6"
+        android:strokeLineCap="round" />
+    <!-- The crescent: a disc with an offset disc taken out, opening to the bead. -->
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M10.164,6.928 A5.64,5.64 0 1,0 16.767,14.263 A4.935,4.935 0 1,1 10.164,6.928 Z" />
+    <!-- The bead: her period. -->
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M17.525,5.584 a1.6,1.6 0 1,0 3.2,0 a1.6,1.6 0 1,0 -3.2,0 Z" />
+</vector>
