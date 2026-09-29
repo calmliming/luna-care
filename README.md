@@ -52,10 +52,10 @@ flutter test
 flutter build apk --split-per-abi   # 在 build/app/outputs/flutter-apk/ 下按 CPU 架构各生成一个安装包
 ```
 
-release 包用正式密钥签名，密钥库的位置和密码写在 `android/key.properties` 里（不进 git）：
+release 包用正式密钥签名，密钥库的位置和密码写在 `android/key.properties` 里（不进 git）。维护者这台电脑上，密钥库、这份文件和使用说明都放在 `D:\SDK\keys\luna-care\`，需要整体备份。
 
 ```properties
-storeFile=D:/SDK/keys/luna-care-release.jks
+storeFile=D:/SDK/keys/luna-care/luna-care-release.jks
 storePassword=…
 keyAlias=luna-care
 keyPassword=…
